@@ -22,24 +22,6 @@ For a sample of the dataset, use the following link: [click](https://xfl.jp/aHhW
 
 It provides 4 days 1Hz readings, 1 day 50 Hz readings and 20 min high freq readings + 32 days annotation data.
 
-
-Use the ``rsync``command to download the data. The password is: *nobodyGetsFIRED*
-
-You can download the complete dataset (that's a whoopy 1.2TB) using rsync:
-```bash
-rsync -avzh --progress rsync://FIRED@<ANONYMOUS>/FIRED/  <DESTINATION> [--dry-run]
-```
-
-If you are only interested in the summary files (28GB) use:
-```bash
-rsync -avzh --progress --exclude="highFreq" rsync://FIRED@FIRED@<ANONYMOUS>/FIRED  <DESTINATION> [--dry-run]
-```
-
-If you want typical Smart Meter data, you can download only the 1Hz data (1GB):
-```bash
-rsync -avzh --progress --exclude="highFreq" --exclude="summary/50Hz" rsync://FIRED@<ANONYMOUS>/FIRED  <DESTINATION> [--dry-run]
-```
-
 ## Installation
 
 Required python packages: numpy, pandas, scipy, json and pyav.
